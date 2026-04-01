@@ -110,12 +110,13 @@ section{padding:7rem 5vw}
 /* TEAMS */
 .teams{background:var(--void)}
 .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:1.2rem;margin-top:3.2rem}
-.tc{height:360px;perspective:1200px;cursor:pointer}
+.tc{height:360px;perspective:1200px;cursor:pointer;transition:height .55s cubic-bezier(.4,0,.2,1)}
 .tci{width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.4,0,.2,1);position:relative}
 .tc:hover .tci,.tc.fl .tci{transform:rotateY(180deg)}
-.tcf,.tcb{position:absolute;inset:0;backface-visibility:hidden;border-radius:6px;border:1px solid var(--border);padding:2rem 1.8rem;display:flex;flex-direction:column}
+.tc:hover,.tc.fl{height:560px;}
+.tcf,.tcb{position:absolute;inset:0;backface-visibility:hidden;border-radius:6px;border:1px solid var(--border);padding:1.4rem 1.4rem;display:flex;flex-direction:column}
 .tcf{background:rgba(14,10,20,.85)}
-.tcb{background:rgba(10,7,16,.95);transform:rotateY(180deg);justify-content:space-between}
+.tcb{background:rgba(10,7,16,.95);transform:rotateY(180deg);justify-content:space-between;overflow-y:auto;}
 .tc:hover .tcf{border-color:rgba(232,96,32,.45)}
 .tc-ico{font-size:2.8rem;margin-bottom:1rem}
 .tc-nm{font-family:"Orbitron",monospace;font-size:.95rem;font-weight:900;color:#fff;margin-bottom:.6rem;letter-spacing:.04em}
@@ -124,7 +125,7 @@ section{padding:7rem 5vw}
 .tc-bt{font-family:"Orbitron",monospace;font-size:.62rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:.75rem;background:var(--red);color:#fff;text-decoration:none;text-align:center;border-radius:2px;transition:background .2s,box-shadow .2s;display:block;margin-top:1rem}
 .tc-bt:hover{background:var(--orange);box-shadow:0 0 28px rgba(232,96,32,.55)}
 .tc-rl{list-style:none;flex:1}
-.tc-rl li{font-size:.9rem;font-weight:300;color:rgba(236,221,208,.6);padding:.38rem 0;border-bottom:1px solid rgba(232,96,32,.08);display:flex;align-items:center;gap:.55rem}
+.tc-rl li{font-size:.8rem;font-weight:300;color:rgba(236,221,208,.6);padding:.28rem 0;border-bottom:1px solid rgba(232,96,32,.08);display:flex;align-items:center;gap:.45rem}
 .tc-rl li::before{content:"↳";color:var(--orange);font-size:.75rem}
 .tc-rh{font-family:"Orbitron",monospace;font-size:.82rem;font-weight:900;color:#fff;letter-spacing:.05em;margin-bottom:.8rem}
 
@@ -176,7 +177,7 @@ footer p{font-size:.78rem;color:rgba(236,221,208,.28);letter-spacing:.04em}.foot
     <h1 class="hero-h">IEEE <span>RAS</span></h1>
     <p class="hero-ras">Robotics and Automation Society</p>
     <p class="hero-bmsit">BMSIT&amp;M</p>
-    <p class="hero-sub">Four critical teams. One rover. Join the mission that pushes humanity's machines across the red planet.</p>
+    <p class="hero-sub">Five engineering domains. One rover. Join the BMSIT RAS mission and build what others only dream.</p>
     <div class="hero-btns">
       <a href="https://forms.gle/nWNZbxFXMfEDBv829" target="_blank" class="btn btn-red">✦ Apply via Google Form</a>
       <a href="https://www.instagram.com/ras_bmsit?igsh=MWtnbW9oam1uNzdubQ==" target="_blank" class="btn btn-line">◎ Follow on Instagram</a>
@@ -209,14 +210,18 @@ footer p{font-size:.78rem;color:rgba(236,221,208,.28);letter-spacing:.04em}.foot
     <div class="mgrid">
       <div class="rv">
         <p class="ey">About the Mission</p>
-        <h2 class="sh2">ONE ROVER.<br>FOUR SYSTEMS.<br>ONE GOAL.</h2>
-        <p class="sp">Engineering a rover capable of surviving Martian dust storms, −80°C nights, and terrain no wheeled machine has crossed before. Every subsystem is mission-critical. Every engineer matters.</p>
+        <h2 class="sh2">ONE ROVER.<br>FIVE SYSTEMS.<br>ONE GOAL.</h2>
+        <!-- ✏️ CHANGED START: intro paragraph -->
+        <p class="sp">The BMSIT IEEE Robotics &amp; Automation Society is assembling an elite crew of engineers to design, build, and test a functional Mars Rover prototype. This is real hardware, real challenges, real glory.<br><br>You'll work on autonomous navigation, mechanical systems, electronics, and software — all converging into a rover that could one day inspire the next generation of space exploration.<br><br>We don't want spectators. We want builders.</p>
+        <!-- ✏️ CHANGED END -->
       </div>
       <div class="sgrid rv">
-        <div class="sbox"><span class="sn">4</span><span class="sl">Core Teams</span></div>
+        <!-- ✏️ CHANGED START: stat box -->
+        <div class="sbox"><span class="sn">5</span><span class="sl">Engineering Domains</span></div>
+        <!-- ✏️ CHANGED END -->
         <div class="sbox"><span class="sn">∞</span><span class="sl">Ambition</span></div>
         <div class="sbox"><span class="sn">1</span><span class="sl">Mission</span></div>
-        <div class="sbox"><span class="sn">0°</span><span class="sl">Compromise</span></div>
+        <div class="sbox"><span class="sn">0%</span><span class="sl">Compromise</span></div>
       </div>
     </div>
   </div>
@@ -226,24 +231,30 @@ footer p{font-size:.78rem;color:rgba(236,221,208,.28);letter-spacing:.04em}.foot
   <div class="wrap">
     <p class="ey rv">Open Positions</p>
     <h2 class="sh2 rv">CHOOSE YOUR SYSTEM</h2>
-    <p class="sp rv">Hover to explore · Click to see open roles</p>
+    <p class="sp rv">Hover to explore · Click to flip for focus areas &amp; experience</p>
     <div class="tgrid">
+      <!-- ✏️ CHANGED START: all team cards (4 updated + 1 new) -->
       <div class="tc rv"><div class="tci">
-        <div class="tcf"><div class="tc-ico">⚡</div><div class="tc-nm">Power System</div><p class="tc-ds">Design the energy backbone — solar arrays, RTG units, battery management, and distribution across every subsystem.</p><div class="tc-tg">Energy · Hardware · Electronics</div></div>
-        <div class="tcb"><div><div class="tc-rh">Open Roles</div><ul class="tc-rl"><li>Power Electronics Engineer</li><li>Battery Systems Designer</li><li>Solar Array Analyst</li><li>PCB Layout Engineer</li></ul></div><a href="https://forms.gle/nWNZbxFXMfEDBv829" target="_blank" class="tc-bt">Apply → Power Team</a></div>
+        <div class="tcf"><div class="tc-ico">⚙️</div><div class="tc-nm">MECHANICAL SYSTEMS</div><p class="tc-ds">Responsible for the rover's physical structure, drivetrain, and mechanical integration across all subsystems. Covers chassis geometry, structural design, and fabrication through to final assembly.</p><div class="tc-tg">CAD · Fabrication · Mechanical</div></div>
+        <div class="tcb"><div><div class="tc-rh">Focus Areas</div><ul class="tc-rl"><li>Rover chassis design and structural analysis</li><li>Drivetrain layout and wheel assembly</li><li>Structural design and load considerations</li><li>CAD modeling and assembly documentation</li><li>Mechanical integration across subsystems</li></ul><div class="tc-rh" style="margin-top:.4rem;font-size:.68rem;">Preferred Experience</div><ul class="tc-rl"><li>CAD tools – SolidWorks, Fusion 360, or Onshape</li><li>Mechanical design fundamentals</li><li>Engineering drawing and tolerancing</li><li>Fabrication or prototyping experience</li></ul></div><a href="https://forms.gle/nWNZbxFXMfEDBv829" target="_blank" class="tc-bt">Apply → Mechanical Team</a></div>
       </div></div>
       <div class="tc rv"><div class="tci">
-        <div class="tcf"><div class="tc-ico">🧭</div><div class="tc-nm">Navigation</div><p class="tc-ds">Build the autonomous pathfinding brain using LIDAR, stereo cameras, and sensor fusion to traverse Martian terrain.</p><div class="tc-tg">AI · Sensors · SLAM</div></div>
-        <div class="tcb"><div><div class="tc-rh">Open Roles</div><ul class="tc-rl"><li>Computer Vision Engineer</li><li>SLAM Algorithm Developer</li><li>Sensor Fusion Specialist</li><li>Path Planning Engineer</li></ul></div><a href="https://forms.gle/nWNZbxFXMfEDBv829" target="_blank" class="tc-bt">Apply → Nav Team</a></div>
+        <div class="tcf"><div class="tc-ico">🌐</div><div class="tc-nm">AUTONOMOUS NAVIGATION</div><p class="tc-ds">Handles localisation, mapping, and path planning to enable the rover to navigate its environment without human input. Work spans SLAM algorithms, LiDAR pipelines, and the ROS2 navigation stack.</p><div class="tc-tg">ROS2 · SLAM · LiDAR</div></div>
+        <div class="tcb"><div><div class="tc-rh">Focus Areas</div><ul class="tc-rl"><li>Localisation and mapping (SLAM)</li><li>LiDAR data processing and integration</li><li>Path planning and obstacle avoidance</li><li>Robotics algorithms and motion planning</li><li>ROS2 navigation stack configuration</li></ul><div class="tc-rh" style="margin-top:.4rem;font-size:.68rem;">Preferred Experience</div><ul class="tc-rl"><li>ROS or ROS2 framework basics</li><li>Python or C++ programming</li><li>SLAM concepts and sensor fusion</li><li>LiDAR or range sensor familiarity</li></ul></div><a href="https://forms.gle/nWNZbxFXMfEDBv829" target="_blank" class="tc-bt">Apply → Nav Team</a></div>
       </div></div>
       <div class="tc rv"><div class="tci">
-        <div class="tcf"><div class="tc-ico">🛞</div><div class="tc-nm">Transportation</div><p class="tc-ds">Engineer the mobility platform — wheels, suspension, drive train, and chassis to conquer rocks at low gravity.</p><div class="tc-tg">Mechanical · Robotics · Dynamics</div></div>
-        <div class="tcb"><div><div class="tc-rh">Open Roles</div><ul class="tc-rl"><li>Mechanical Design Engineer</li><li>Suspension Systems Lead</li><li>Drive Train Architect</li><li>Materials Analyst</li></ul></div><a href="https://forms.gle/nWNZbxFXMfEDBv829" target="_blank" class="tc-bt">Apply → Transport Team</a></div>
+        <div class="tcf"><div class="tc-ico">👁️</div><div class="tc-nm">COMPUTER VISION &amp; PERCEPTION</div><p class="tc-ds">Processes visual and sensor data to allow the rover to detect, classify, and interpret its surroundings. Covers camera systems, image processing pipelines, and environment analysis.</p><div class="tc-tg">OpenCV · Python · Perception</div></div>
+        <div class="tcb"><div><div class="tc-rh">Focus Areas</div><ul class="tc-rl"><li>Camera system setup and calibration</li><li>Visual perception pipeline development</li><li>Image processing and feature extraction</li><li>Environment and terrain analysis</li><li>Integration with navigation stack</li></ul><div class="tc-rh" style="margin-top:.4rem;font-size:.68rem;">Preferred Experience</div><ul class="tc-rl"><li>OpenCV or image processing libraries</li><li>Python programming</li><li>Image processing fundamentals</li><li>Raspberry Pi or Linux systems</li></ul></div><a href="https://forms.gle/nWNZbxFXMfEDBv829" target="_blank" class="tc-bt">Apply → Vision Team</a></div>
       </div></div>
       <div class="tc rv"><div class="tci">
-        <div class="tcf"><div class="tc-ico">🖥️</div><div class="tc-nm">Control System</div><p class="tc-ds">Build real-time command architecture — firmware, software, and comms protocols syncing every subsystem with mission HQ.</p><div class="tc-tg">Firmware · Comms · Software</div></div>
-        <div class="tcb"><div><div class="tc-rh">Open Roles</div><ul class="tc-rl"><li>Embedded Systems Engineer</li><li>RF Communications Lead</li><li>Real-time OS Developer</li><li>Ground Station Engineer</li></ul></div><a href="https://forms.gle/nWNZbxFXMfEDBv829" target="_blank" class="tc-bt">Apply → Control Team</a></div>
+        <div class="tcf"><div class="tc-ico">🔧</div><div class="tc-nm">CONTROL &amp; EMBEDDED SYSTEMS</div><p class="tc-ds">Manages embedded firmware, motor control, and the hardware-software interface. Translates high-level ROS2 commands into precise physical actuation across the rover's actuator and sensor systems.</p><div class="tc-tg">Embedded · Firmware · ROS2</div></div>
+        <div class="tcb"><div><div class="tc-rh">Focus Areas</div><ul class="tc-rl"><li>Embedded programming for microcontrollers</li><li>Motor control and driver interfacing</li><li>PWM and GPIO interface implementation</li><li>PID control design and tuning</li><li>Robotics system integration with ROS2</li></ul><div class="tc-rh" style="margin-top:.4rem;font-size:.68rem;">Preferred Experience</div><ul class="tc-rl"><li>Microcontroller programming – Arduino, ESP32, or STM32</li><li>C / C++ for embedded systems</li><li>Motor drivers and PWM / GPIO interfaces</li><li>PID control basics</li></ul></div><a href="https://forms.gle/nWNZbxFXMfEDBv829" target="_blank" class="tc-bt">Apply → Control Team</a></div>
       </div></div>
+      <div class="tc rv"><div class="tci">
+        <div class="tcf"><div class="tc-ico">⚡</div><div class="tc-nm">POWER &amp; ELECTRICAL SYSTEMS</div><p class="tc-ds">Designs and manages the rover's full electrical architecture – from power distribution and regulation to battery management and system-wide wiring across all subsystems.</p><div class="tc-tg">Electronics · Power · Wiring</div></div>
+        <div class="tcb"><div><div class="tc-rh">Focus Areas</div><ul class="tc-rl"><li>Power distribution network design</li><li>Voltage regulation – buck / boost converters</li><li>Battery system selection and management</li><li>Electrical architecture and wiring</li><li>Cross-subsystem electrical integration</li></ul><div class="tc-rh" style="margin-top:.4rem;font-size:.68rem;">Preferred Experience</div><ul class="tc-rl"><li>Power electronics basics</li><li>Buck / boost converter principles</li><li>Battery systems and load estimation</li><li>Circuit schematic design tools</li></ul></div><a href="https://forms.gle/nWNZbxFXMfEDBv829" target="_blank" class="tc-bt">Apply → Power Team</a></div>
+      </div></div>
+      <!-- ✏️ CHANGED END -->
     </div>
   </div>
 </section>
